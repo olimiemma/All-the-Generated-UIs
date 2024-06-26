@@ -1,0 +1,61 @@
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/hGLH7o1CK6Y
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+export default function Component() {
+  return (
+    <div className="flex flex-col items-center justify-center h-screen bg-background">
+      <div className="max-w-md w-full px-6 py-8 bg-card rounded-lg shadow-lg">
+        <h1 className="text-2xl font-bold mb-4 text-card-foreground">What is the capital of France?</h1>
+        <div className="space-y-2">
+          <div className="flex items-center bg-background rounded-md px-4 py-3 cursor-pointer hover:bg-muted transition">
+            <input
+              type="radio"
+              name="answer"
+              id="answer1"
+              className="h-4 w-4 text-primary border-gray-300 focus:ring-primary"
+            />
+            <label htmlFor="answer1" className="ml-3 block text-sm font-medium text-card-foreground">
+              Paris
+            </label>
+          </div>
+          <div className="flex items-center bg-background rounded-md px-4 py-3 cursor-pointer hover:bg-muted transition">
+            <input
+              type="radio"
+              name="answer"
+              id="answer2"
+              className="h-4 w-4 text-primary border-gray-300 focus:ring-primary"
+            />
+            <label htmlFor="answer2" className="ml-3 block text-sm font-medium text-card-foreground">
+              London
+            </label>
+          </div>
+          <div className="flex items-center bg-primary rounded-md px-4 py-3 cursor-pointer text-primary-foreground">
+            <input
+              type="radio"
+              name="answer"
+              id="answer3"
+              className="h-4 w-4 text-primary border-gray-300 focus:ring-primary"
+              defaultChecked
+            />
+            <label htmlFor="answer3" className="ml-3 block text-sm font-medium text-primary-foreground">
+              Madrid
+            </label>
+          </div>
+          <div className="flex items-center bg-background rounded-md px-4 py-3 cursor-pointer hover:bg-muted transition">
+            <input
+              type="radio"
+              name="answer"
+              id="answer4"
+              className="h-4 w-4 text-primary border-gray-300 focus:ring-primary"
+            />
+            <label htmlFor="answer4" className="ml-3 block text-sm font-medium text-card-foreground">
+              Berlin
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
