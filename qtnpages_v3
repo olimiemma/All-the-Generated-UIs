@@ -1,0 +1,50 @@
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/vrAmYPb0i23
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+
+export default function Component() {
+  return (
+    <div className="flex flex-col items-center justify-center h-screen bg-background">
+      <div className="max-w-md w-full space-y-6 p-6 rounded-lg shadow-lg bg-card">
+        <h2 className="text-2xl font-bold text-card-foreground">What is the capital of France?</h2>
+        <div className="space-y-2">
+          <RadioGroup>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="paris" id="paris" className="peer sr-only" />
+              <Label
+                htmlFor="paris"
+                className="inline-flex items-center justify-between w-full px-4 py-2 rounded-md border border-input bg-background text-card-foreground hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground cursor-pointer"
+              >
+                Paris
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="london" id="london" className="peer sr-only" />
+              <Label
+                htmlFor="london"
+                className="inline-flex items-center justify-between w-full px-4 py-2 rounded-md border border-input bg-background text-card-foreground hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground cursor-pointer"
+              >
+                London
+              </Label>
+            </div>
+            <div className="flex items-center space-x-2">
+              <RadioGroupItem value="berlin" id="berlin" className="peer sr-only" />
+              <Label
+                htmlFor="berlin"
+                className="inline-flex items-center justify-between w-full px-4 py-2 rounded-md border border-input bg-background text-card-foreground hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:bg-primary peer-data-[state=checked]:text-primary-foreground cursor-pointer"
+              >
+                Berlin
+              </Label>
+            </div>
+          </RadioGroup>
+        </div>
+        <Button className="w-full">Submit</Button>
+      </div>
+    </div>
+  )
+}
