@@ -1,0 +1,57 @@
+/**
+ * v0 by Vercel.
+ * @see https://v0.dev/t/QrJ8b8ej2hP
+ * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
+ */
+"use client"
+
+import { useState } from "react"
+
+export default function Component() {
+  const [selectedAnswer, setSelectedAnswer] = useState(null)
+  const [isCorrect, setIsCorrect] = useState(false)
+  const question = "What is the capital of France?"
+  const answers = [
+    { label: "Paris", isCorrect: true },
+    { label: "London", isCorrect: false },
+    { label: "Berlin", isCorrect: false },
+    { label: "Madrid", isCorrect: false },
+  ]
+  const handleAnswerSelect = (answer) => {
+    setSelectedAnswer(answer)
+    setIsCorrect(answer.isCorrect)
+  }
+  return (
+    <div className="flex flex-col items-center justify-center h-screen bg-background">
+      <div className="max-w-md w-full p-6 bg-card rounded-lg shadow-lg">
+        <h1 className="text-2xl font-bold mb-4 text-card-foreground">{question}</h1>
+        <div className="grid grid-cols-2 gap-4">
+          {answers.map((answer, index) => (
+            <button
+              key={index}
+              onClick={() => handleAnswerSelect(answer)}
+              className={`rounded-md px-4 py-2 transition-colors ${
+                selectedAnswer === answer
+                  ? answer.isCorrect
+                    ? "bg-green-500 text-green-50 hover:bg-green-600"
+                    : "bg-red-500 text-red-50 hover:bg-red-600"
+                  : "bg-card hover:bg-muted text-card-foreground"
+              }`}
+            >
+              {answer.label}
+            </button>
+          ))}
+        </div>
+        {selectedAnswer && (
+          <div className="mt-4 text-center">
+            {isCorrect ? (
+              <p className="text-green-500 font-bold">Correct!</p>
+            ) : (
+              <p className="text-red-500 font-bold">Incorrect.</p>
+            )}
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
